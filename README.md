@@ -28,7 +28,7 @@ Ubuntu/Debian: https://github.com/manoel-linux/cpu-t-ubuntu-debian
 
 # 3. Execute the CPU-T script
 
-- sudo `cpu-t`
+- sudo `cpu-t` or `cpu-t`
 
 # For uninstall
 
