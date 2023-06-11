@@ -32,6 +32,10 @@
 
 - sudo `./uninstall.sh`
 
+# Other Projects
+
+- DEB2XBPS: A tool I developed based on the code of xdeb, specifically designed for Void Linux. DEB2XBPS enables the conversion of .deb packages to the .xbps  - - - format used in Void Linux, simplifying package management in this distribution. You can find the source code and additional information about DEB2XBPS in the - - following repository: https://github.com/manoel-linux/deb2xbps-shlibs-voidpackages. It is based on the xdeb.
+
 # Project Status
 
 - The CPU-T project is currently in development. The latest stable version is 0.0.1. We aim to provide regular updates and add more features in the future.
