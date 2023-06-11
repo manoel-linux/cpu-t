@@ -44,7 +44,6 @@ exit 1
 fi
 
 rm /usr/bin/cpu-t
-echo "#############################################################"
 cp cpu-t /usr/bin/
 
 chmod +x /usr/bin/cpu-t
