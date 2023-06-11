@@ -4,8 +4,6 @@
 
 - build-latest: 0.0.1
 
-- The CPU-T is a command-line tool to display information about the CPU of your system.
-
 - CPU-T is an open-source project, and we are happy to share it with the community. You have complete freedom to do whatever you want with CPU-T, in accordance with the terms of the MIT license. You can modify, distribute, use it in your own projects, or even create a fork of CPU-T to add additional features.
 
 ## Installation
@@ -18,21 +16,21 @@
 
 # 2. To install the CPU-T script, follow these steps
 
-- chmod a+x installupdate.sh
+- chmod a+x `installupdate.sh`
 
-- sudo ./installupdate.sh
+- sudo `./installupdate.sh`
 
-- When installing cpu-t for the first time, you may encounter an error "rm /usr/bin/cpu-t" if the file doesn't exist. This removal command is part of - - the update process, but during the initial installation, the cpu-t file is not yet present in the /usr/bin/ directory. Therefore, you can safely ignore -- this error as it will not affect the installation of cpu-t. The script will proceed to copy the cpu-t file to the /usr/bin/ directory and set the ----- correct permissions.
+- When installing CPU-T for the first time, you may encounter an error "`rm /usr/bin/cpu-t`" if the file doesn't exist. This removal command is part of - - the update process, but during the initial installation, the CPU-T file is not yet present in the `/usr/bin/` directory. Therefore, you can safely ignore -- this error as it will not affect the installation of CPU-T. The script will proceed to copy the CPU-T file to the `/usr/bin/` directory and set the ----- correct permissions.
 
 # 3. Execute the CPU-T script
 
-- sudo cpu-t
+- sudo `cpu-t`
 
 # For uninstall
 
-- chmod a+x uninstall.sh
+- chmod a+x `uninstall.sh`
 
-- sudo ./uninstall.sh
+- sudo `./uninstall.sh`
 
 # Project Status
 
