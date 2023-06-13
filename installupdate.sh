@@ -44,8 +44,10 @@ exit 1
 fi
 
 rm /usr/bin/cpu-t
+
 cp cpu-t /usr/bin/
 
 chmod +x /usr/bin/cpu-t
+
 echo "DONE! Installation/Update completed."
 echo "#############################################################"
