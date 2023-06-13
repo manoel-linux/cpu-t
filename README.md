@@ -2,7 +2,7 @@
 
 - cpu-t-version: june 2023
 
-- build-latest: 0.0.2
+- build-latest: 0.0.3
 
 - CPU-T is an open-source project, and we are happy to share it with the community. You have complete freedom to do whatever you want with CPU-T, in accordance with the terms of the MIT license. You can modify, distribute, use it in your own projects, or even create a fork of CPU-T to add additional features.
 
@@ -44,7 +44,7 @@ Arch/Artix: https://github.com/manoel-linux/cpu-t-arch-artix
 
 # Project Status
 
-- The CPU-T project is currently in development. The latest stable version is 0.0.2. We aim to provide regular updates and add more features in the future.
+- The CPU-T project is currently in development. The latest stable version is 0.0.3. We aim to provide regular updates and add more features in the future.
 
 # License
 
