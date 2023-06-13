@@ -10,6 +10,8 @@
 
 Ubuntu/Debian: https://github.com/manoel-linux/cpu-t-ubuntu-debian
 
+Arch/Artix: https://github.com/manoel-linux/cpu-t-arch-artix
+
 ## Installation
 
 - To install CPU-T, follow the steps below:
