@@ -10,7 +10,7 @@
 
 Ubuntu/Debian: https://github.com/manoel-linux/cpu-t-ubuntu-debian
 
-Arch/Artix/Manjaro: https://github.com/manoel-linux/cpu-t-arch-artix
+Arch/Artix/Manjaro: https://github.com/manoel-linux/cpu-t-arch-artix-manjaro
 
 ## Installation
 
