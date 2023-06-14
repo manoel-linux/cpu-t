@@ -51,3 +51,5 @@ chmod +x /usr/bin/cpu-t
 
 echo "DONE! Installation/Update completed."
 echo "#############################################################"
+echo "To use CPU-T, execute the following command: sudo cpu-t or cpu-t"
+echo "#############################################################"
