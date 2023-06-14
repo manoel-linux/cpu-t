@@ -46,3 +46,5 @@ rm /usr/bin/cpu-t
 
 echo "DONE! Uninstallation completed."
 echo "#############################################################"
+echo "To use CPU-T, execute the following command: sudo cpu-t or cpu-t"
+echo "#############################################################"
