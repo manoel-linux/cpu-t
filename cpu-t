@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 clear
 echo "#############################################################"
@@ -20,9 +20,14 @@ else
 echo "#############################################################"
 echo "No internet connection. Unable to check for updates Skipping."
 fi
+
+clear
+
+show_main_menu() {
+while true; do
 clear
 echo "#############################################################"
-echo "cpu-t-version: june 2023"
+echo "cpu-t-version: june 2023 new interface"
 echo "#############################################################"
 echo "  ██████ ██████  ██    ██       ████████ "
 echo " ██      ██   ██ ██    ██          ██    "
@@ -30,26 +35,96 @@ echo " ██      ██████  ██    ██ █████    █�
 echo " ██      ██      ██    ██          ██    "
 echo "  ██████ ██       ██████           ██    "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 echo "#############################################################"
-echo "build-latest: 0.0.5"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+echo "build-latest: 0.0.6"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 echo "cpu-t-github: https://github.com/manoel-linux/cpu-t-void-linux"
 echo "#############################################################"
-echo "$(date)"
-echo "Linux $(uname -r)"
+
+if [[ $EUID -eq 0 ]]; then
+echo "This script should not be executed as a superuser."
+echo "Please run it without superuser privileges."
 echo "#############################################################"
-echo "System Information"
+exit 1
+fi
+
+echo "(1)> System Information And Startup Mode"
+echo "(2)> CPU: model, cores, threads, freq, temp, supp, & unsupp, instruction sets"
+echo "(3)> Memory Information"
+echo "(4)> Disk info, Linux partitions, total usage, space usage, and free space"
+echo "(5)> PCI Bus Information"
+echo "(6)> USB Device Information"
+echo "(7)> GPU info, Driver Type, GPU Name, GPU Temperature, OpenGL Version"
+echo "(8)> Exit"
+echo "#############################################################"
+
+read -p "Enter your choice: " choice
+echo "#############################################################"
+
+case $choice in
+1)
+show_system_info
+;;
+2)
+show_cpu_info
+;;
+3)
+show_memory_info
+;;
+
+4)
+show_disk_info
+;;
+5)
+show_expansion_slots_info
+;;
+6)
+show_usb_devices
+;;
+7)
+show_gpu_info
+;;
+8)
+exit 0
+;;
+*)
+echo "Invalid choice. Please try again."
+echo "#############################################################"
+sleep 2
+;;
+esac
+done
+}
+
+show_system_info() {
+while true; do
+clear
 echo "#############################################################"
 echo "Hostname: $(cat /etc/hostname)"
-echo "Operating System: $(uname -a)"
+echo "Kernel Version: $(uname -r)"
 echo "Current Date and Time: $(date)"
 echo "#############################################################"
 echo "Compositing Window Manager: $XDG_SESSION_TYPE"
+
 if [ -d "/sys/firmware/efi" ]; then
 echo "Boot mode: UEFI (EFI)"
 else
 echo "Boot mode: Legacy (BIOS)"
 fi
 echo "#############################################################"
-echo "CPU Information"a
+read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+#############################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
+done
+
+echo "#############################################################"
+}
+
+show_cpu_info() {
+while true; do
+clear
 echo "#############################################################"
 echo "CPU Model: $(cat /proc/cpuinfo | grep "model name" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//')"
 echo "CPU Cores/Threads: $(nproc)"
@@ -80,13 +155,44 @@ if [ ${#unsupported_instructions[@]} -ne 0 ]; then
     done
 fi
 '
+echo "#############################################################"
+
+read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+#############################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
+done
 
 echo "#############################################################"
-echo "Memory Information"
+}
+
+show_memory_info() {
+while true; do
+clear
 echo "#############################################################"
 echo "Total Memory: $(awk '/MemTotal/ {printf "%.2f GB", $2/1024/1024}' /proc/meminfo)"
+ram_usage=$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2}')
+echo "RAM Usage: $ram_usage"
 echo "#############################################################"
-echo "Disk Information"
+
+read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+#############################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
+done
+
+echo "#############################################################"
+}
+
+show_disk_info() {
+while true; do
+clear
 echo "#############################################################"
 lsblk
 echo "#############################################################"
@@ -94,17 +200,60 @@ echo "Total Disk Size: $(df -h | awk '/\/$/ {print $2}')"
 echo "Used Disk Space: $(df -h | awk '/\/$/ {print $3}')"
 echo "Free Disk Space: $(df -h | awk '/\/$/ {print $4}')"
 echo "#############################################################"
-echo "Expansion Slots Information"
-echo "#############################################################"
-lspci | grep -i "pci bridge" | awk -F" " '{print $1, $2, $3, $4}' | while read -r slot; do
-echo "- $slot"
+
+read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+#############################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
 done
+
 echo "#############################################################"
-echo "USB Devices"
+}
+
+show_expansion_slots_info() {
+while true; do
+clear
+echo "#############################################################"
+lspci | grep -i "pci bridge" | awk -F" " '{print $1, $2, $3, $4}'
+echo "#############################################################"
+
+read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+#############################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
+done
+
+echo "#############################################################"
+}
+
+show_usb_devices() {
+while true; do
+clear
 echo "#############################################################"
 lsusb
 echo "#############################################################"
-echo "GPU Information"
+
+read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+#############################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
+done
+
+echo "#############################################################"
+}
+
+show_gpu_info() {
+while true; do
+clear
 echo "#############################################################"
 gpu_name=$(lspci -v | grep -i vga | cut -d ":" -f 3)
 echo "GPU Name: $gpu_name"
@@ -114,3 +263,17 @@ gpu_temp=$(sensors | grep "temp1:" | awk '{ print $2; exit }')
 echo "GPU Temperature: $gpu_temp"
 glxinfo | grep "OpenGL version string"
 echo "#############################################################"
+
+read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+#############################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
+done
+
+echo "#############################################################"
+}
+
+show_main_menu
