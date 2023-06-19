@@ -15,7 +15,7 @@ sudo xbps-install -Syu -y
 else
 echo "Skipping system update."
 echo "#############################################################"
-sudo xbps-install glxinfo unzip binutils tar curl xbps xz lm_sensors -y
+sudo xbps-install glxinfo unzip binutils tar curl xbps xz lm_sensors dialog -y
 fi
 else
 echo "#############################################################"
@@ -33,9 +33,6 @@ echo "  ██████ ██       ██████           ██    "
 echo "#############################################################"
 echo "cpu-t-github: hhttps://github.com/manoel-linux/cpu-t-void-linux"
 echo "#############################################################"
-echo "$(date)"
-echo "Linux $(uname -r)"
-echo "#############################################################"
 
 if [[ $EUID -ne 0 ]]; then
 echo "ERROR! sudo needed" 
@@ -51,5 +48,5 @@ chmod +x /usr/bin/cpu-t
 
 echo "DONE! Installation/Update completed."
 echo "#############################################################"
-echo "To use CPU-T, execute the following command: sudo cpu-t or cpu-t"
+echo "To use CPU-T, execute the following command: cpu-t"
 echo "#############################################################"
