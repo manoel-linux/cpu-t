@@ -32,9 +32,6 @@ echo "  ██████ ██       ██████           ██    "
 echo "#############################################################"
 echo "cpu-t-github: https://github.com/manoel-linux/cpu-t-void-linux"
 echo "#############################################################"
-echo "$(date)"
-echo "linux $(uname -r)"
-echo "#############################################################"
 
 if [[ $EUID -ne 0 ]]; then
 echo "ERROR! sudo needed" 
@@ -46,5 +43,5 @@ rm /usr/bin/cpu-t
 
 echo "DONE! Uninstallation completed."
 echo "#############################################################"
-echo "To use CPU-T, execute the following command: sudo cpu-t or cpu-t"
+echo "To use CPU-T, execute the following command: cpu-t"
 echo "#############################################################"
