@@ -34,7 +34,7 @@ echo "cpu-t-github: https://github.com/manoel-linux/cpu-t-void-linux"
 echo "#############################################################"
 
 if [[ $EUID -ne 0 ]]; then
-echo "ERROR! sudo needed" 
+echo "ERROR! Superuser privileges or sudo required to execute the script." 
 echo "#############################################################"
 exit 1
 fi
