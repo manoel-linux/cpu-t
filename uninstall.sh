@@ -41,7 +41,13 @@ fi
 
 sudo rm /usr/bin/cpu-t
 
-echo "DONE! Uninstallation completed."
+echo " ██████   ██████  ███    ██ ███████ ██ "
+echo " ██   ██ ██    ██ ████   ██ ██      ██ "
+echo " ██   ██ ██    ██ ██ ██  ██ █████   ██ "
+echo " ██   ██ ██    ██ ██  ██ ██ ██         "
+echo " ██████   ██████  ██   ████ ███████ ██ " 
+echo "#############################################################"
+echo "Uninstallation completed."
 echo "#############################################################"
 echo "To use CPU-T, execute the following command: cpu-t"
 echo "#############################################################"
