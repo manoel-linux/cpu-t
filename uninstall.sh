@@ -39,7 +39,7 @@ echo "#############################################################"
 exit 1
 fi
 
-rm /usr/bin/cpu-t
+sudo rm /usr/bin/cpu-t
 
 echo "DONE! Uninstallation completed."
 echo "#############################################################"
