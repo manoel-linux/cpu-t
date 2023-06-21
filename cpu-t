@@ -35,13 +35,13 @@ echo " ██      ██████  ██    ██ █████    █�
 echo " ██      ██      ██    ██          ██    "
 echo "  ██████ ██       ██████           ██    "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 echo "#############################################################"
-echo "build-latest: 0.0.7"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+echo "build-latest: 0.0.8"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 echo "cpu-t-github: https://github.com/manoel-linux/cpu-t-void-linux"
 echo "#############################################################"
 
 if [[ $EUID -eq 0 ]]; then
-echo "This script should not be executed as a superuser."
-echo "Please run it without superuser privileges."
+echo "This script should not be executed as a superuser or sudo."
+echo "Please run it without superuser privileges or sudo."
 echo "#############################################################"
 exit 1
 fi
