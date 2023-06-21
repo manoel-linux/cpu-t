@@ -4,7 +4,7 @@
 
 - Starting from version 0.0.6, executing CPU-T as a superuser or with sudo privileges has been blocked. It can only be executed without superuser or sudo privileges
 
-- build-latest: 0.0.7
+- build-latest: 0.0.8
 
 - CPU-T is an open-source project, and we are happy to share it with the community. You have complete freedom to do whatever you want with CPU-T, in accordance with the terms of the MIT license. You can modify, distribute, use it in your own projects, or even create a fork of CPU-T to add additional features.
 
@@ -52,7 +52,7 @@ Arch/Artix/Manjaro: https://github.com/manoel-linux/cpu-t-arch-artix-manjaro
 
 # Project Status
 
-- The CPU-T project is currently in development. The latest stable version is 0.0.7. We aim to provide regular updates and add more features in the future.
+- The CPU-T project is currently in development. The latest stable version is 0.0.8. We aim to provide regular updates and add more features in the future.
 
 # License
 
