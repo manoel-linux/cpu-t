@@ -15,7 +15,7 @@ echo " ██      ██      ██    ██          ██    "
 echo "  ██████ ██       ██████           ██    "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 echo "#################################################################"
 echo "build-latest: 0.0.9"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-echo "cpu-t-github: https://github.com/manoel-linux/cpu-t-void-linux"
+echo "cpu-t-github: https://github.com/manoel-linux/cpu-t"
 echo "#################################################################"
 
 if [[ $EUID -eq 0 ]]; then
