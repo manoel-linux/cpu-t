@@ -40,11 +40,11 @@ echo "#############################################################"
 exit 1
 fi
 
-rm /usr/bin/cpu-t
+sudo rm /usr/bin/cpu-t
 
-cp cpu-t /usr/bin/
+sudo cp cpu-t /usr/bin/
 
-chmod +x /usr/bin/cpu-t
+sudo chmod +x /usr/bin/cpu-t
 
 echo "DONE! Installation/Update completed."
 echo "#############################################################"
