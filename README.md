@@ -8,12 +8,6 @@
 
 - CPU-T is an open-source project, and we are happy to share it with the community. You have complete freedom to do whatever you want with CPU-T, in accordance with the terms of the MIT license. You can modify, distribute, use it in your own projects, or even create a fork of CPU-T to add additional features.
 
-## Version CPU-T for other distro
-
-Ubuntu/Debian: https://github.com/manoel-linux/cpu-t-ubuntu-debian
-
-Arch/Artix/Manjaro: https://github.com/manoel-linux/cpu-t-arch-artix-manjaro
-
 ## Installation
 
 - To install CPU-T, follow the steps below:
