@@ -46,7 +46,13 @@ sudo cp cpu-t /usr/bin/
 
 sudo chmod +x /usr/bin/cpu-t
 
-echo "DONE! Installation/Update completed."
+echo " ██████   ██████  ███    ██ ███████ ██ "
+echo " ██   ██ ██    ██ ████   ██ ██      ██ "
+echo " ██   ██ ██    ██ ██ ██  ██ █████   ██ "
+echo " ██   ██ ██    ██ ██  ██ ██ ██         "
+echo " ██████   ██████  ██   ████ ███████ ██ "  
+echo "#############################################################"
+echo "Installation/Update completed."
 echo "#############################################################"
 echo "To use CPU-T, execute the following command: cpu-t"
 echo "#############################################################"
