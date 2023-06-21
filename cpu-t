@@ -40,6 +40,12 @@ echo "cpu-t-github: https://github.com/manoel-linux/cpu-t-void-linux"
 echo "#############################################################"
 
 if [[ $EUID -eq 0 ]]; then
+echo " ███████ ██████  ██████   ██████  ██████  ██ "
+echo " ██      ██   ██ ██   ██ ██    ██ ██   ██ ██ "
+echo " █████   ██████  ██████  ██    ██ ██████  ██ "
+echo " ██      ██   ██ ██   ██ ██    ██ ██   ██    "
+echo " ███████ ██   ██ ██   ██  ██████  ██   ██ ██ "                                                                                        
+echo "#############################################################"
 echo "This script should not be executed as a superuser or sudo."
 echo "Please run it without superuser privileges or sudo."
 echo "#############################################################"
