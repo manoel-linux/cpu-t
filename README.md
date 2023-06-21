@@ -44,6 +44,8 @@ Arch/Artix/Manjaro: https://github.com/manoel-linux/cpu-t-arch-artix-manjaro
 
 - opti-gnome-wayland is a powerful program aimed at optimizing the GNOME boot process and reducing memory usage, resulting in a lighter and more efficient GNOME   - desktop environment. With this tool, you can enjoy a faster and more responsive experience when using GNOME, even on systems with limited resources.  You can   - find the source code and more information about opti-gnome-wayland in the following repository: https://github.com/manoel-linux/opti-gnome-wayland
 
+- The install-uefi-in-qemu-confidential script is a tool for installing QEMU UEFI when the UEFI BIOS is not included or available in the distribution's repository. You can   - find the source code and more information about install-uefi-in-qemu in the following repository: https://github.com/manoel-linux/install-uefi-in-qemu
+
 - DEB2XBPS: A tool I developed based on the code of xdeb, specifically designed for Void Linux. DEB2XBPS enables the conversion of .deb packages to the .xbps  - - - format used in Void Linux, simplifying package management in this distribution. You can find the source code and additional information about DEB2XBPS in the - - following repository: https://github.com/manoel-linux/deb2xbps-shlibs-voidpackages. It is based on the xdeb.
 
 # Project Status
