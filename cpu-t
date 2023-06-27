@@ -14,7 +14,7 @@ echo " ██      ██████  ██    ██ █████    █�
 echo " ██      ██      ██    ██          ██    "
 echo "  ██████ ██       ██████           ██    "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 echo "#################################################################"
-echo "build-latest: 0.1.1"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+echo "build-latest: 0.1.2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 echo "cpu-t-github: https://github.com/manoel-linux/cpu-t"
 echo "#################################################################"
 
@@ -31,14 +31,14 @@ echo "#################################################################"
 exit 1
 fi
 
-echo "(1)> Kernel, hostname, time, Xorg/Wayland, boot mode (EFI/Legacy)"
-echo "(2)> CPU: model, cores, threads, freq, temp, supp, & unsupp, instruction sets"
-echo "(3)> Memory Information"
-echo "(4)> Disk info, Linux partitions, total usage, space usage, and free space"
-echo "(5)> PCI Bus Information"
-echo "(6)> USB Device Information"
-echo "(7)> GPU info, Driver Type, GPU Name, GPU Temperature, OpenGL Version"
-echo "(8)> (NEW) >> Hard Drive RPM information"
+echo "(1)> (Kernel), hostname, time, Xorg/Wayland, boot mode (EFI/Legacy)"
+echo "(2)> (CPU): model, cores, threads, freq, temp, supp, & unsupp, instruction sets"
+echo "(3)> (Memory) Information"
+echo "(4)> (Disk info), Linux partitions, total usage, space usage, and free space"
+echo "(5)> (PCI Bus) Information"
+echo "(6)> (USB Device) Information"
+echo "(7)> (GPU info), Driver Type, GPU Name, GPU Temperature, OpenGL Version"
+echo "(8)> (NEW) >> (Hard Drive RPM) information"
 echo "(9)> Exit"
 echo "#################################################################"
 
