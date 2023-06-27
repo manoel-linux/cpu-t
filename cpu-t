@@ -55,7 +55,6 @@ show_cpu_info
 3)
 show_memory_info
 ;;
-
 4)
 show_disk_info
 ;;
