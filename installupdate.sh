@@ -78,7 +78,7 @@ sudo xbps-install -Syu -y
 else
 echo "Skipping system update."
 echo "#################################################################"
-sudo xbps-install glxinfo unzip binutils tar curl xbps xz lm_sensors dialog -y
+sudo xbps-install glxinfo unzip binutils tar curl xbps xz lm_sensors dialog hdparm -y
 fi
 else
 echo "#################################################################"
@@ -130,7 +130,7 @@ sudo apt upgrade -y
 else
 echo "Skipping system update."
 echo "#################################################################"
-sudo apt install mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog -y
+sudo apt install mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog hdparm -y
 fi
 else
 echo "#################################################################"
@@ -181,7 +181,7 @@ sudo pacman -Syu -y
 else
 echo "Skipping system update."
 echo "#################################################################"
-sudo pacman -S mesa-utils glxinfo mesa-demos glxinfo unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog -y
+sudo pacman -S mesa-utils glxinfo mesa-demos glxinfo unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
 fi
 else
 echo "#################################################################"
