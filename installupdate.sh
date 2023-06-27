@@ -30,10 +30,10 @@ echo "#################################################################"
 exit 1
 fi
 
-echo "(1)> Install the CPU-T version of Void-Linux"
-echo "(2)> Install the CPU-T version of Ubuntu/Debian"
-echo "(3)> Install the CPU-T version of Arch-Artix-Manjaro"
-echo "(4)> Exit"
+echo "(1)> (Install) the CPU-T version of Void-Linux"
+echo "(2)> (Install) the CPU-T version of Ubuntu/Debian"
+echo "(3)> (Install) the CPU-T version of Arch-Artix-Manjaro"
+echo "(4)> (Exit)"
 echo "#################################################################"
 
 read -p "Enter your choice: " choice
@@ -67,7 +67,7 @@ clear
 echo "#################################################################"
 echo "Checking for updates in Void Linux..." 
 echo "#################################################################"
-sudo xbps-install Inetutils-ping -y
+sudo xbps-install inetutils-ping -y
 if ping -q -c 1 -W 1 voidlinux.org >/dev/null; then
 echo "Internet connection established. It is possible to check for updates."
 echo "#################################################################"
