@@ -119,7 +119,7 @@ clear
 echo "#################################################################"
 echo "Checking for updates in Ubuntu/Debian..." 
 echo "#################################################################"
-sudo apt install inetutils-ping -y
+sudo apt-get install --no-install-recommends inetutils-ping -y
 if ping -q -c 1 -W 1 debian.org >/dev/null; then
 echo "Internet connection established. It is possible to check for updates."
 echo "#################################################################"
@@ -132,7 +132,7 @@ sudo apt upgrade -y
 else
 echo "Skipping system update."
 echo "#################################################################"
-sudo apt install mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog hdparm -y
+sudo apt-get install --no-install-recommends mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog hdparm -y
 fi
 else
 echo "#################################################################"
