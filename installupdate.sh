@@ -68,6 +68,7 @@ echo "#################################################################"
 echo "Checking for updates in Void Linux..." 
 echo "#################################################################"
 sudo xbps-install inetutils-ping glxinfo unzip binutils tar curl xbps xz lm_sensors dialog hdparm -y
+echo "#################################################################"
 if ping -q -c 1 -W 1 voidlinux.org >/dev/null; then
 echo "Internet connection established. It is possible to check for updates."
 echo "#################################################################"
@@ -89,7 +90,7 @@ sudo rm /usr/bin/cpu-t
 sudo cp cpu-t /usr/bin/
 
 sudo chmod +x /usr/bin/cpu-t
-
+echo "#################################################################"
 echo " ██████   ██████  ███    ██ ███████ ██ "
 echo " ██   ██ ██    ██ ████   ██ ██      ██ "
 echo " ██   ██ ██    ██ ██ ██  ██ █████   ██ "
@@ -119,6 +120,7 @@ echo "#################################################################"
 echo "Checking for updates in Ubuntu/Debian..." 
 echo "#################################################################"
 sudo apt-get install --no-install-recommends inetutils-ping mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog hdparm -y
+echo "#################################################################"
 if ping -q -c 1 -W 1 debian.org >/dev/null; then
 echo "Internet connection established. It is possible to check for updates."
 echo "#################################################################"
@@ -142,7 +144,7 @@ sudo rm /usr/bin/cpu-t
 sudo cp cpu-t /usr/bin/
 
 sudo chmod +x /usr/bin/cpu-t
-
+echo "#################################################################"
 echo " ██████   ██████  ███    ██ ███████ ██ "
 echo " ██   ██ ██    ██ ████   ██ ██      ██ "
 echo " ██   ██ ██    ██ ██ ██  ██ █████   ██ "
@@ -172,6 +174,7 @@ echo "#################################################################"
 echo "Checking for updates in Arch/Artix/Manjaro..." 
 echo "#################################################################"
 sudo pacman -S iputils mesa-utils glxinfo mesa-demos glxinfo unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
+echo "#################################################################"
 if ping -q -c 1 -W 1 archlinux.org >/dev/null; then
 echo "Internet connection established. It is possible to check for updates."
 echo "#################################################################"
@@ -193,7 +196,7 @@ sudo rm /usr/bin/cpu-t
 sudo cp cpu-t /usr/bin/
 
 sudo chmod +x /usr/bin/cpu-t
-
+echo "#################################################################"
 echo " ██████   ██████  ███    ██ ███████ ██ "
 echo " ██   ██ ██    ██ ████   ██ ██      ██ "
 echo " ██   ██ ██    ██ ██ ██  ██ █████   ██ "
