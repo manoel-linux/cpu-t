@@ -134,10 +134,11 @@ echo "Skipping system update."
 echo "#################################################################"
 fi
 else
-sudo apt-get install --no-install-recommends mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog hdparm -y
 echo "#################################################################"
 echo "No internet connection. Unable to check for updates Skipping."
 fi
+sudo apt-get install --no-install-recommends mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog hdparm -y
+
 sudo rm /usr/bin/cpu-t
 
 sudo cp cpu-t /usr/bin/
