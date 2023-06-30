@@ -127,8 +127,8 @@ echo "#################################################################"
 read -p "Do you want to update your system? (y/n): " choice
 echo "#################################################################"
 if [[ $choice == "y" || $choice == "Y" ]]; then
-sudo apt update -y
-sudo apt upgrade -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
 else
 echo "Skipping system update."
 echo "#################################################################"
