@@ -1,6 +1,6 @@
 # CPU-T
 
-- cpu-t-version: june 2023
+- cpu-t-version: july 2023
 
 - from version 0.0.9 now supports Void Linux and Ubuntu/Debian, as well as Arch/Artix/Manjaro within the installer without the need to go to another link
 
