@@ -6,7 +6,7 @@ show_main_menu() {
 while true; do
 clear
 echo "#################################################################"
-echo "cpu-t-version: june 2023 new interface"
+echo "cpu-t-version: july 2023 new interface"
 echo "#################################################################"
 echo "  ██████ ██████  ██    ██       ████████ "
 echo " ██      ██   ██ ██    ██          ██    "
