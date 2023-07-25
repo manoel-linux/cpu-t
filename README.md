@@ -6,7 +6,7 @@
 
 - Starting from version 0.0.6, executing CPU-T as a superuser or with sudo privileges has been blocked. It can only be executed without superuser or sudo privileges
 
-- build-latest: 0.1.4
+- build-latest: 0.1.5
 
 - CPU-T is an open-source project, and we are happy to share it with the community. You have complete freedom to do whatever you want with CPU-T, in accordance with the terms of the MIT license. You can modify, distribute, use it in your own projects, or even create a fork of CPU-T to add additional features.
 
@@ -54,7 +54,7 @@
 
 # Project Status
 
-- The CPU-T project is currently in development. The latest stable version is 0.1.4. We aim to provide regular updates and add more features in the future.
+- The CPU-T project is currently in development. The latest stable version is 0.1.5. We aim to provide regular updates and add more features in the future.
 
 # License
 
