@@ -53,7 +53,9 @@ echo "#################################################################"
 echo "Connected to the internet. Running the script..."
 echo "#################################################################"
 echo "(1)> (Install) the CPU-T version of Void-Linux"
-echo "(2)> (Exit)"
+echo "(2)> (Install) the CPU-T version of Ubuntu/Debian"
+echo "(3)> (Install) the CPU-T version of Arch-Artix-Manjaro"
+echo "(4)> (Exit)"
 echo "#################################################################"
 
 read -p "Enter your choice: " choice
@@ -64,6 +66,12 @@ case $choice in
 show_void-linux
 ;;
 2)
+show_ubuntu-debian
+;;
+3)
+show_arch-artix-manjaro
+;;
+4)
 exit 0
 ;;
 *)
@@ -95,6 +103,119 @@ read -p "Do you want to update your system? (y/n): " choice
 echo "#################################################################"
 if [[ $choice == "y" || $choice == "Y" ]]; then
 sudo xbps-install -Syu -y
+else
+echo "Skipping system update."
+echo "#################################################################"
+fi
+
+clear
+
+sudo rm /usr/bin/cpu-t
+
+sudo cp cpu-t /usr/bin/
+
+sudo chmod +x /usr/bin/cpu-t
+echo "#################################################################"
+echo " ██████   ██████  ███    ██ ███████ ██ "
+echo " ██   ██ ██    ██ ████   ██ ██      ██ "
+echo " ██   ██ ██    ██ ██ ██  ██ █████   ██ "
+echo " ██   ██ ██    ██ ██  ██ ██ ██         "
+echo " ██████   ██████  ██   ████ ███████ ██ "  
+echo "#################################################################"
+echo "Installation/Update completed."
+echo "#################################################################"
+echo "To use CPU-T, execute the following command: cpu-t"
+echo "#################################################################"
+read -rsn1 -p "press Enter to return to the main menu
+#################################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_ubuntu-debian() {
+while true; do
+clear
+if [ ! -x /bin/apt ]; then
+echo "#################################################################"
+echo "(Warning!) >> You are trying to run a version meant for another distribution. 
+To prevent issues, the script has blocked a warning to execute the version meant for your distribution."
+echo "#################################################################"
+exit 1
+fi
+echo "#################################################################"
+echo "Checking for updates in Ubuntu/Debian..." 
+echo "#################################################################"
+sudo apt-get install --no-install-recommends mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog hdparm -y
+clear
+echo "#################################################################"
+
+read -p "Do you want to update your system? (y/n): " choice
+echo "#################################################################"
+if [[ $choice == "y" || $choice == "Y" ]]; then
+sudo apt-get update -y
+sudo apt-get upgrade -y
+else
+echo "Skipping system update."
+echo "#################################################################"
+fi
+
+clear
+
+sudo rm /usr/bin/cpu-t
+
+sudo cp cpu-t /usr/bin/
+
+sudo chmod +x /usr/bin/cpu-t
+echo "#################################################################"
+echo " ██████   ██████  ███    ██ ███████ ██ "
+echo " ██   ██ ██    ██ ████   ██ ██      ██ "
+echo " ██   ██ ██    ██ ██ ██  ██ █████   ██ "
+echo " ██   ██ ██    ██ ██  ██ ██ ██         "
+echo " ██████   ██████  ██   ████ ███████ ██ "  
+echo "#################################################################"
+echo "Installation/Update completed."
+echo "#################################################################"
+echo "To use CPU-T, execute the following command: cpu-t"
+echo "#################################################################"
+read -rsn1 -p "press Enter to return to the main menu
+#################################################################" key
+if [[ $key == "r" || $key == "R" ]]; then
+continue
+fi
+
+break
+done
+
+echo "#################################################################"
+}
+
+show_arch-artix-manjaro() {
+while true; do
+clear
+if [ ! -x /bin/pacman ]; then
+echo "#################################################################"
+echo "(Warning!) >> You are trying to run a version meant for another distribution. 
+To prevent issues, the script has blocked a warning to execute the version meant for your distribution."
+echo "#################################################################"
+exit 1
+fi
+echo "#################################################################"
+echo "Checking for updates in Arch/Artix/Manjaro..." 
+echo "#################################################################"
+sudo pacman -S mesa-utils glxinfo mesa-demos glxinfo unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
+clear
+echo "#################################################################"
+
+read -p "Do you want to update your system? (y/n): " choice
+echo "#################################################################"
+if [[ $choice == "y" || $choice == "Y" ]]; then
+sudo pacman -Syu -y
 else
 echo "Skipping system update."
 echo "#################################################################"
