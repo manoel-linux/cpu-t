@@ -2,15 +2,15 @@
 
 - cpu-t-version: july 2023
 
-- from version 0.0.9 now supports Void Linux and Ubuntu/Debian, as well as Arch/Artix/Manjaro within the installer without the need to go to another link
-
-- Starting from version 0.0.6, executing CPU-T as a superuser or with sudo privileges has been blocked. It can only be executed without superuser or sudo privileges
-
 - build-latest: 0.1.6
 
 - Support for the distro: Void-Linux/Ubuntu/Debian/Arch/Artix/Manjaro
 
 - If you are using a distribution based on Ubuntu, Debian, or Arch, the script will work without any issues.
+
+- from version 0.0.9 now supports Void Linux and Ubuntu/Debian, as well as Arch/Artix/Manjaro within the installer without the need to go to another link
+
+- Starting from version 0.0.6, executing CPU-T as a superuser or with sudo privileges has been blocked. It can only be executed without superuser or sudo privileges
 
 - CPU-T is an open-source project, and we are happy to share it with the community. You have complete freedom to do whatever you want with CPU-T, in accordance with the terms of the MIT license. You can modify, distribute, use it in your own projects, or even create a fork of CPU-T to add additional features.
 
