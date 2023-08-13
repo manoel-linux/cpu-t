@@ -113,9 +113,14 @@ clear
 
 sudo rm /usr/bin/cpu-t
 
+clear
+
 sudo cp cpu-t /usr/bin/
 
 sudo chmod +x /usr/bin/cpu-t
+
+clear
+
 echo "#################################################################"
 echo " ██████   ██████  ███    ██ ███████ ██ "
 echo " ██   ██ ██    ██ ████   ██ ██      ██ "
