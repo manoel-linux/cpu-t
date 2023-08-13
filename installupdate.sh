@@ -31,12 +31,16 @@ echo "#################################################################"
 exit 1
 fi
 
+sudo dnf update
 sudo dnf install iputils -y
 echo "#################################################################"
+sudo pacman -Sy
 sudo pacman -S iputils -y
 echo "#################################################################"
-sudo xbps-install inetutils-ping -y
+sudo xbps-install -Sy
+sudo xbps-install -S inetutils-ping -y
 echo "#################################################################"
+sudo apt-get update
 sudo apt-get install --no-install-recommends inetutils-ping -y
 echo "#################################################################"
 
@@ -90,6 +94,7 @@ exit 1
 fi
 echo "Checking for updates in Void Linux..." 
 echo "#################################################################"
+sudo xbps-install -Sy
 sudo xbps-install glxinfo unzip binutils tar curl xbps xz usbutils grep gawk sed lm_sensors dialog hdparm -y
 clear
 echo "#################################################################"
@@ -97,6 +102,7 @@ echo "#################################################################"
 read -p "Do you want to update your system? (y/n): " choice
 echo "#################################################################"
 if [[ $choice == "y" || $choice == "Y" ]]; then
+sudo xbps-install -Sy
 sudo xbps-install -Syu -y
 else
 echo "Skipping system update."
@@ -146,6 +152,7 @@ fi
 echo "#################################################################"
 echo "Checking for updates in Ubuntu/Debian..." 
 echo "#################################################################"
+sudo apt-get update
 sudo apt-get install --no-install-recommends mesa-utils unzip binutils tar curl xz-utils usbutils grep gawk sed lm-sensors dialog hdparm -y
 clear
 echo "#################################################################"
@@ -153,7 +160,7 @@ echo "#################################################################"
 read -p "Do you want to update your system? (y/n): " choice
 echo "#################################################################"
 if [[ $choice == "y" || $choice == "Y" ]]; then
-sudo apt-get update -y
+sudo apt-get update
 sudo apt-get upgrade -y
 else
 echo "Skipping system update."
@@ -208,6 +215,7 @@ fi
 echo "#################################################################"
 echo "Checking for updates in Arch/Artix/Manjaro..." 
 echo "#################################################################"
+sudo pacman -Sy
 sudo pacman -S mesa-utils mesa-demos unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
 clear
 echo "#################################################################"
@@ -215,6 +223,7 @@ echo "#################################################################"
 read -p "Do you want to update your system? (y/n): " choice
 echo "#################################################################"
 if [[ $choice == "y" || $choice == "Y" ]]; then
+sudo pacman -Sy
 sudo pacman -Syu -y
 else
 echo "Skipping system update."
@@ -269,6 +278,7 @@ fi
 echo "#################################################################"
 echo "Checking for updates in Fedora..." 
 echo "#################################################################"
+sudo dnf update
 sudo dnf install mesa-utils mesa-demos unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
 clear
 echo "#################################################################"
@@ -276,6 +286,7 @@ echo "#################################################################"
 read -p "Do you want to update your system? (y/n): " choice
 echo "#################################################################"
 if [[ $choice == "y" || $choice == "Y" ]]; then
+sudo dnf update
 sudo dnf upgrade -y
 else
 echo "Skipping system update."
