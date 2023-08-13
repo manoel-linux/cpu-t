@@ -31,15 +31,6 @@ echo "#################################################################"
 exit 1
 fi
 
-web="fsf.org"
-
-if ! ping -q -c 1 -W 1 "$web" >/dev/null; then
-echo "#################################################################"
-echo "No internet connection. The script will not be executed."
-echo "#################################################################"
-exit 1
-fi
-
 sudo pacman -S iputils -y
 echo "#################################################################"
 sudo xbps-install inetutils-ping -y
@@ -49,8 +40,6 @@ echo "#################################################################"
 
 clear
 
-echo "#################################################################"
-echo "Connected to the internet. Running the script..."
 echo "#################################################################"
 echo "(1)> (Install) the CPU-T version of Void-Linux"
 echo "(2)> (Install) the CPU-T version of Ubuntu/Debian"
