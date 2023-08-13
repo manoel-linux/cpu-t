@@ -208,7 +208,7 @@ fi
 echo "#################################################################"
 echo "Checking for updates in Arch/Artix/Manjaro..." 
 echo "#################################################################"
-sudo pacman -S mesa-utils glxinfo mesa-demos glxinfo unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
+sudo pacman -S mesa-utils mesa-demos unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
 clear
 echo "#################################################################"
 
@@ -269,7 +269,7 @@ fi
 echo "#################################################################"
 echo "Checking for updates in Fedora..." 
 echo "#################################################################"
-sudo dnf install mesa-utils glxinfo mesa-demos glxinfo unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
+sudo dnf install mesa-utils mesa-demos unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
 clear
 echo "#################################################################"
 
