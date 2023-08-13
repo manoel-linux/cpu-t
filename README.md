@@ -4,7 +4,7 @@
 
 - build-latest: 0.1.6
 
-- Support for the distro: Void-Linux/Ubuntu/Debian/Arch/Artix/Manjaro
+- Support for the distro: Void-Linux/Ubuntu/Debian/Arch/Artix/Manjaro/Fedora (Experimental)
 
 - If you are using a distribution based on Ubuntu, Debian, or Arch, the script will work without any issues.
 
@@ -27,8 +27,6 @@
 - chmod a+x `installupdate.sh`
 
 - sudo `./installupdate.sh`
-
-- When installing CPU-T for the first time, you may encounter an error "`rm /usr/bin/cpu-t`" if the file doesn't exist. This removal command is part of - - the update process, but during the initial installation, the CPU-T file is not yet present in the `/usr/bin/` directory. Therefore, you can safely ignore -- this error as it will not affect the installation of CPU-T. The script will proceed to copy the CPU-T file to the `/usr/bin/` directory and set the ----- correct permissions.
 
 # 3. Execute the CPU-T script
 
