@@ -268,7 +268,7 @@ echo "#################################################################"
 show_fedora() {
 while true; do
 clear
-if [ ! -x /bin/pacman ]; then
+if [ ! -x /bin/dnf ]; then
 echo "#################################################################"
 echo "(Warning!) >> You are trying to run a version meant for another distribution. 
 To prevent issues, the script has blocked a warning to execute the version meant for your distribution."
@@ -276,16 +276,16 @@ echo "#################################################################"
 exit 1
 fi
 echo "#################################################################"
-echo "Checking for updates in Arch/Artix/Manjaro..." 
+echo "Checking for updates in Fedora..." 
 echo "#################################################################"
-sudo pacman -S mesa-utils glxinfo mesa-demos glxinfo unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
+sudo dnf install mesa-utils glxinfo mesa-demos glxinfo unzip binutils tar curl xz usbutils grep gawk sed lm_sensors dialog hdparm -y
 clear
 echo "#################################################################"
 
 read -p "Do you want to update your system? (y/n): " choice
 echo "#################################################################"
 if [[ $choice == "y" || $choice == "Y" ]]; then
-sudo pacman -Syu -y
+sudo dnf upgrade -y
 else
 echo "Skipping system update."
 echo "#################################################################"
