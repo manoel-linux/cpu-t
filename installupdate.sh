@@ -90,7 +90,7 @@ exit 1
 fi
 echo "Checking for updates in Void Linux..." 
 echo "#################################################################"
-sudo xbps-install glxinfo unzip binutils tar curl xbps xz lm_sensors dialog hdparm -y
+sudo xbps-install glxinfo unzip binutils tar curl xbps xz usbutils grep gawk sed lm_sensors dialog hdparm -y
 clear
 echo "#################################################################"
 
