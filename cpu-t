@@ -6,7 +6,7 @@ show_main_menu() {
 while true; do
 clear
 echo "#################################################################"
-echo "cpu-t-version: july 2023 new interface"
+echo "cpu-t-version: aug 2023 new interface"
 echo "#################################################################"
 echo "  ██████ ██████  ██    ██       ████████ "
 echo " ██      ██   ██ ██    ██          ██    "
@@ -14,7 +14,7 @@ echo " ██      ██████  ██    ██ █████    █�
 echo " ██      ██      ██    ██          ██    "
 echo "  ██████ ██       ██████           ██    "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 echo "#################################################################"
-echo "build-latest: 0.1.6"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+echo "build-latest: 0.1.7"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 echo "cpu-t-github: https://github.com/manoel-linux/cpu-t"
 echo "#################################################################"
 
@@ -31,14 +31,14 @@ echo "#################################################################"
 exit 1
 fi
 
-echo "(1)> (Kernel), hostname, time, Xorg/Wayland, boot mode (EFI/Legacy)"
-echo "(2)> (CPU): model, cores, threads, freq, temp, (NEW) >> virt, supp, & unsupp, instruction sets"
+echo "(1)> (Kernel), hostname, time, Xorg/Wayland, boot mode (EFI/Legacy), (NEW) >> Secure Boot"
+echo "(2)> (CPU): model, cores, threads, freq, temp, virt, supp, & unsupp, instruction sets"
 echo "(3)> (Memory) Information"
 echo "(4)> (Disk info), Linux partitions, total usage, space usage, and free space"
 echo "(5)> (PCI Bus) Information"
 echo "(6)> (USB Device) Information"
 echo "(7)> (GPU info), Driver Type, GPU Name, GPU Temperature, Video Memory, OpenGL Version"
-echo "(8)> (Hard Drive RPM) information"
+echo "(8)> (Hard Drive RPM) information. NOTE: If you have an SSD-SATA/SSD-NVMe/SSD-M.2, do not use this option"
 echo "(9)> (Exit)"
 echo "#################################################################"
 
@@ -90,12 +90,21 @@ echo "Hostname: $(cat /etc/hostname)"
 echo "Kernel Version: $(uname -r)"
 echo "Current Date and Time: $(date)"
 echo "#################################################################"
-echo "Compositing Window Manager: $XDG_SESSION_TYPE"
-
+echo "Xorg or Wayland: $XDG_SESSION_TYPE"
 if [ -d "/sys/firmware/efi" ]; then
 echo "Boot mode: UEFI (EFI)"
 else
 echo "Boot mode: Legacy (BIOS)"
+fi
+secure_boot_status=$(mokutil --sb-state 2>&1)
+if [ -d "/sys/firmware/efi" ]; then
+if [[ "$secure_boot_status" == *"SecureBoot enabled"* ]]; then
+echo "Secure Boot is enabled."
+else
+echo "Secure Boot is not enabled or the UEFI firmware settings do not support it."
+fi
+else
+echo "Secure Boot is not supported as the system is running in Legacy (BIOS) mode."
 fi
 echo "#################################################################"
 read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
