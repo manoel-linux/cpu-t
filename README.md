@@ -1,6 +1,6 @@
 # CPU-T
 
-- cpu-t-version: july 2023
+- cpu-t-version: aug 2023
 
 - build-latest: 0.1.7
 
