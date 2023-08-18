@@ -14,7 +14,7 @@ echo " ██      ██████  ██    ██ █████    █�
 echo " ██      ██      ██    ██          ██    "
 echo "  ██████ ██       ██████           ██    "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 echo "#################################################################"
-echo "build-latest: 0.1.8"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+echo "build-latest: 0.1.9"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 echo "cpu-t-github: https://github.com/manoel-linux/cpu-t"
 echo "#################################################################"
 
@@ -141,20 +141,20 @@ supported_instructions=("mmx" "nx" "avx" "avx2" "sse4_1" "sse4_2" "ssse3" "sse2"
 unsupported_instructions=()
 
 for instruction in "${supported_instructions[@]}"; do
-  if grep -q -w $instruction /proc/cpuinfo; then
-    echo "- $instruction: Supported"
-  else
-    unsupported_instructions+=("$instruction")
-  fi
+if grep -q -w $instruction /proc/cpuinfo; then
+echo "- $instruction: Supported"
+else
+unsupported_instructions+=("$instruction")
+fi
 done
 
 if [ ${#unsupported_instructions[@]} -ne 0 ]; then
-  echo "#################################################################"
-  echo "Unsupported Instructions:"
-  echo "#################################################################"
-  for instruction in "${unsupported_instructions[@]}"; do
-    echo "- $instruction: Not supported"
-    done
+echo "#################################################################"
+echo "Unsupported Instructions:"
+echo "#################################################################"
+for instruction in "${unsupported_instructions[@]}"; do
+echo "- $instruction: Not supported"
+done
 fi
 '
 echo "#################################################################"
