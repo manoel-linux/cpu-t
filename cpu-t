@@ -14,7 +14,7 @@ echo " ██      ██████  ██    ██ █████    █�
 echo " ██      ██      ██    ██          ██    "
 echo "  ██████ ██       ██████           ██    "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 echo "#################################################################"
-echo "build-latest: 0.2.0"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+echo "build-latest: 0.2.1"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 echo "cpu-t-github: https://github.com/manoel-linux/cpu-t"
 echo "#################################################################"
 
@@ -86,15 +86,15 @@ show_system_info() {
 while true; do
 clear
 echo "#################################################################"
-echo "Hostname: $(cat /etc/hostname)"
-echo "Kernel Version: $(uname -r)"
-echo "Current Date and Time: $(date)"
+echo "Hostname >> ($(cat /etc/hostname))"
+echo "Kernel Version >> ($(uname -r))"
+echo "Current Date and Time >> ($(date))"
 echo "#################################################################"
-echo "Xorg or Wayland: $XDG_SESSION_TYPE"
+echo "Xorg or Wayland >> ($XDG_SESSION_TYPE)"
 if [ -d "/sys/firmware/efi" ]; then
-echo "Boot mode: UEFI (EFI)"
+echo "Boot mode >> UEFI (EFI)"
 else
-echo "Boot mode: Legacy (BIOS)"
+echo "Boot mode >> Legacy (BIOS)"
 fi
 secure_boot_status=$(mokutil --sb-state 2>&1)
 if [ -d "/sys/firmware/efi" ]; then
@@ -123,15 +123,16 @@ show_cpu_info() {
 while true; do
 clear
 echo "#################################################################"
-echo "CPU Model: $(cat /proc/cpuinfo | grep "model name" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//')"
-echo "CPU Cores/Threads: $(nproc)"
-echo "CPU Frequency: $(cat /proc/cpuinfo | grep "cpu MHz" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//') MHz"
+echo "CPU Model >> ($(cat /proc/cpuinfo | grep "model name" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//'))"
+echo "CPU Cores >> ($(nproc))"
+echo "CPU Threads >> ($(nproc))"
+echo "CPU Frequency >> ($(cat /proc/cpuinfo | grep "cpu MHz" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//') MHz)"
 cpu_temp=$(sensors | grep "Core 0:" | awk '{print $3}')
-echo "CPU Temperature: $cpu_temp"
+echo "CPU Temperature >> ($cpu_temp)"
 if grep -q -E 'vmx|svm' /proc/cpuinfo; then
-echo "CPU Virtualization: Enabled"
+echo "CPU Virtualization >> (Enabled)"
 else
-echo "CPU Virtualization: Disabled or not supported by the CPU"
+echo "CPU Virtualization >> (Disabled or not supported by the CPU)"
 fi
 echo "#################################################################"
 bash -c '
@@ -172,9 +173,9 @@ show_memory_info() {
 while true; do
 clear
 echo "#################################################################"
-echo "Total Memory: $(awk '/MemTotal/ {printf "%.2f GB", $2/1024/1024}' /proc/meminfo)"
+echo "Total Memory >> ($(awk '/MemTotal/ {printf "%.2f GB", $2/1024/1024}' /proc/meminfo))"
 ram_usage=$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2}')
-echo "RAM Usage: $ram_usage"
+echo "RAM Usage >> ($ram_usage)"
 echo "#################################################################"
 
 read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
@@ -195,9 +196,9 @@ clear
 echo "#################################################################"
 lsblk
 echo "#################################################################"
-echo "Total Disk Size: $(df -h | awk '/\/$/ {print $2}')"
-echo "Used Disk Space: $(df -h | awk '/\/$/ {print $3}')"
-echo "Free Disk Space: $(df -h | awk '/\/$/ {print $4}')"
+echo "Total Disk Size >> ($(df -h | awk '/\/$/ {print $2}'))"
+echo "Used Disk Space >> ($(df -h | awk '/\/$/ {print $3}'))"
+echo "Free Disk Space >> ($(df -h | awk '/\/$/ {print $4}'))"
 echo "#################################################################"
 
 read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
@@ -255,11 +256,11 @@ while true; do
 clear
 echo "#################################################################"
 gpu_name=$(lspci -v | grep -i vga | cut -d ":" -f 3)
-echo "GPU Name: $gpu_name"
+echo "GPU Name >> ($gpu_name)"
 echo "#################################################################"
-echo "Video Driver: $(lspci -k | awk '/VGA compatible controller/ {getline; print}' | awk '{print $3}')"
+echo "Video Driver >> ($(lspci -k | awk '/VGA compatible controller/ {getline; print}' | awk '{print $3}'))"
 gpu_temp=$(sensors | grep "temp1:" | awk '{ print $2; exit }')
-echo "GPU Temperature: $gpu_temp"
+echo "GPU Temperature >> ($gpu_temp)"
 glxinfo | grep -i "Video Memory"
 glxinfo | grep "OpenGL version string"
 echo "#################################################################"
@@ -283,7 +284,7 @@ echo "#################################################################"
 device="/dev/sda"  
 rpm=$(sudo hdparm -I "$device" | grep Rotation | awk '{print $NF}')
 if [[ -n "$rpm" ]]; then
-echo "Hard drive RPM ($device): $rpm"
+echo "Hard drive RPM ($device) >> ($rpm)"
 else
 echo "Unable to retrieve the RPM of the hard drive ($device)"
 fi
@@ -291,7 +292,7 @@ echo "#################################################################"
 device="/dev/vda"  
 rpm=$(sudo hdparm -I "$device" | grep Rotation | awk '{print $NF}')
 if [[ -n "$rpm" ]]; then
-echo "Hard drive RPM ($device): $rpm"
+echo "Hard drive RPM ($device) >> ($rpm)"
 else
 echo "Unable to retrieve the RPM of the hard drive ($device)"
 fi
