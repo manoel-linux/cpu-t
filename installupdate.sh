@@ -4,7 +4,6 @@ clear
 
 show_main_menu() {
 while true; do
-
 clear
 echo "#############################################################"
 echo "cpu-t-installer >> (aug 2023)"
