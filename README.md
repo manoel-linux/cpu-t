@@ -2,7 +2,7 @@
 
 - cpu-t-version: aug 2023
 
-- build-latest: 0.2.0
+- build-latest: 0.2.1
 
 - Support for the distro: Void-Linux/Ubuntu/Debian/Arch/Artix/Manjaro/Fedora (Experimental)
 
@@ -56,7 +56,7 @@
 
 # Project Status
 
-- The CPU-T project is currently in development. The latest stable version is 0.2.0. We aim to provide regular updates and add more features in the future.
+- The CPU-T project is currently in development. The latest stable version is 0.2.1. We aim to provide regular updates and add more features in the future.
 
 # License
 
