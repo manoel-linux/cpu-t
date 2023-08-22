@@ -45,7 +45,7 @@ echo "#################################################################"
 clear
 
 echo "#################################################################"
-echo "(1)> (Install) >> (the CPU-T version of Void-Linux")
+echo "(1)> (Install) >> (the CPU-T version of Void-Linux)"
 echo "(2)> (Install) >> (the CPU-T version of Ubuntu/Debian)"
 echo "(3)> (Install) >> (the CPU-T version of Arch-Artix-Manjaro)"
 echo "(4)> (Install) >> (the CPU-T version of Fedora (Experimental)"
