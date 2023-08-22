@@ -6,7 +6,7 @@ show_main_menu() {
 while true; do
 clear
 echo "#################################################################"
-echo "cpu-t-version >> (aug 2023) (new interface)"
+echo "(cpu-t-version) >> (aug 2023) (new interface)"
 echo "#################################################################"
 echo "  ██████ ██████  ██    ██       ████████ "
 echo " ██      ██   ██ ██    ██          ██    "
@@ -14,8 +14,8 @@ echo " ██      ██████  ██    ██ █████    █�
 echo " ██      ██      ██    ██          ██    "
 echo "  ██████ ██       ██████           ██    "   
 echo "#################################################################"
-echo "build-latest >> (0.2.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-echo "cpu-t-github >> (https://github.com/manoel-linux/cpu-t)"
+echo "(build-latest) >> (0.2.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+echo "(cpu-t-github) >> (https://github.com/manoel-linux/cpu-t)"
 echo "#################################################################"
 
 if [[ $EUID -eq 0 ]]; then
@@ -25,24 +25,24 @@ echo " █████   ██████  ██████  ██    █�
 echo " ██      ██   ██ ██   ██ ██    ██ ██   ██    "
 echo " ███████ ██   ██ ██   ██  ██████  ██   ██ ██ "                                                                                        
 echo "#################################################################"
-echo "This script should not be executed as a superuser or sudo."
-echo "Please run it without superuser privileges or sudo."
+echo "(This script should not be executed as a superuser or sudo)"
+echo "(Please run it without superuser privileges or sudo)"
 echo "#################################################################"
 exit 1
 fi
 
-echo "(1)> (Kernel), hostname, time, Xorg/Wayland, boot mode (EFI/Legacy), (NEW) >> Secure Boot"
-echo "(2)> (CPU), model, cores, threads, freq, temp, virt, supp, & unsupp, instruction sets"
-echo "(3)> (Memory), Information"
-echo "(4)> (Disk info), Linux partitions, total usage, space usage, and free space"
-echo "(5)> (PCI Bus), Information"
-echo "(6)> (USB Device), Information"
-echo "(7)> (GPU info), Driver Type, GPU Name, GPU Temperature, Video Memory, OpenGL Version"
-echo "(8)> (Hard Drive RPM), information. NOTE >> (If you have an SSD-SATA/SSD-NVMe/SSD-M.2, do not use this option)"
+echo "(1)> (Kernel), (hostname), (time), (Xorg/Wayland), (boot mode EFI/Legacy), (NEW) >> (Secure Boot)"
+echo "(2)> (CPU), (model), (cores), (threads), (freq), (temp), (virt), (supp), & (unsupp), (instruction sets)"
+echo "(3)> (Memory), (Information)"
+echo "(4)> (Disk info), (Linux partitions), (total usage), (space usage), (and free space)"
+echo "(5)> (PCI Bus), (Information)"
+echo "(6)> (USB Device), (Information)"
+echo "(7)> (GPU info), (Driver Type), (GPU Name), (GPU Temperature), (Video Memory), (OpenGL Version)"
+echo "(8)> (Hard Drive RPM), (information) (NOTE) >> (If you have an SSD-SATA/SSD-NVMe/SSD-M.2, do not use this option)"
 echo "(9)> (Exit)"
 echo "#################################################################"
 
-read -p "Enter your choice: " choice
+read -p "(Enter your choice) >> " choice
 echo "#################################################################"
 
 case $choice in
@@ -74,7 +74,7 @@ show_rpm_disk_info
 exit 0
 ;;
 *)
-echo "Invalid choice. Please try again."
+echo "(Invalid choice. Please try again)"
 echo "#################################################################"
 sleep 2
 ;;
@@ -86,28 +86,28 @@ show_system_info() {
 while true; do
 clear
 echo "#################################################################"
-echo "Hostname >> ($(cat /etc/hostname))"
-echo "Kernel Version >> ($(uname -r))"
-echo "Current Date and Time >> ($(date))"
+echo "(Hostname) >> ($(cat /etc/hostname))"
+echo "(Kernel Version) >> ($(uname -r))"
+echo "(Current Date and Time) >> ($(date))"
 echo "#################################################################"
-echo "Xorg or Wayland >> ($XDG_SESSION_TYPE)"
+echo "(Xorg or Wayland) >> ($XDG_SESSION_TYPE)"
 if [ -d "/sys/firmware/efi" ]; then
-echo "Boot mode >> UEFI (EFI)"
+echo "(Boot mode) >> UEFI (EFI)"
 else
-echo "Boot mode >> Legacy (BIOS)"
+echo "(Boot mode) >> Legacy (BIOS)"
 fi
 secure_boot_status=$(mokutil --sb-state 2>&1)
 if [ -d "/sys/firmware/efi" ]; then
 if [[ "$secure_boot_status" == *"SecureBoot enabled"* ]]; then
-echo "Secure Boot is enabled."
+echo "(Secure Boot is enabled)"
 else
-echo "Secure Boot is not enabled or the UEFI firmware settings do not support it."
+echo "(Secure Boot is not enabled or the UEFI firmware settings do not support it)"
 fi
 else
-echo "Secure Boot is not supported as the system is running in Legacy (BIOS) mode."
+echo "(Secure Boot is not supported as the system is running in Legacy (BIOS) mode)"
 fi
 echo "#################################################################"
-read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+read -rsn1 -p "(Press 'r or R' to reload or press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
@@ -123,27 +123,27 @@ show_cpu_info() {
 while true; do
 clear
 echo "#################################################################"
-echo "CPU Model >> ($(cat /proc/cpuinfo | grep "model name" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//'))"
-echo "CPU Cores >> ($(grep 'cpu cores' /proc/cpuinfo | uniq | awk '{print $4}'))"
-echo "CPU Threads >> ($(grep 'siblings' /proc/cpuinfo | uniq | awk '{print $3}'))"
-echo "CPU Frequency >> ($(cat /proc/cpuinfo | grep "cpu MHz" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//') MHz)"
+echo "(CPU Model) >> ($(cat /proc/cpuinfo | grep "model name" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//'))"
+echo "(CPU Cores) >> ($(grep 'cpu cores' /proc/cpuinfo | uniq | awk '{print $4}'))"
+echo "(CPU Threads) >> ($(grep 'siblings' /proc/cpuinfo | uniq | awk '{print $3}'))"
+echo "(CPU Frequency) >> ($(cat /proc/cpuinfo | grep "cpu MHz" | head -n1 | awk -F: '{print $2}' | sed 's/^[ \t]*//') MHz)"
 cpu_temp=$(sensors | grep "Core 0:" | awk '{print $3}')
-echo "CPU Temperature >> ($cpu_temp)"
+echo "(CPU Temperature) >> ($cpu_temp)"
 if grep -q -E 'vmx|svm' /proc/cpuinfo; then
-echo "CPU Virtualization >> (Enabled)"
+echo "(CPU Virtualization) >> (Enabled)"
 else
-echo "CPU Virtualization >> (Disabled or not supported by the CPU)"
+echo "(CPU Virtualization) >> (Disabled or not supported by the CPU)"
 fi
 echo "#################################################################"
 bash -c '
-echo "Unsupported/Supported >> (Instructions)"
+echo "(Unsupported/Supported) >> (Instructions)"
 echo "#################################################################"
 supported_instructions=("mmx" "nx" "avx" "avx2" "sse4_1" "sse4_2" "ssse3" "sse2" "sse" "ht" "apic" "acpi" "fma3" "cx16" "smap" "aes" "pclmulqdq" "fma" "cx8" "smep" "rdtscp" "lm" )
 unsupported_instructions=()
 
 for instruction in "${supported_instructions[@]}"; do
 if grep -q -w $instruction /proc/cpuinfo; then
-echo ">> ($instruction) supported by the processor"
+echo ">> ($instruction) (supported by the processor)"
 else
 unsupported_instructions+=("$instruction")
 fi
@@ -151,13 +151,13 @@ done
 if [ ${#unsupported_instructions[@]} -ne 0 ]; then
 echo "#################################################################"
 for instruction in "${unsupported_instructions[@]}"; do
-echo ">> ($instruction) Not supported by the processor"
+echo ">> ($instruction) (Not supported by the processor)"
 done
 fi
 '
 echo "#################################################################"
 
-read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+read -rsn1 -p "(Press 'r or R' to reload or press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
@@ -173,12 +173,12 @@ show_memory_info() {
 while true; do
 clear
 echo "#################################################################"
-echo "Total Memory >> ($(awk '/MemTotal/ {printf "%.2f GB", $2/1024/1024}' /proc/meminfo))"
+echo "(Total Memory) >> ($(awk '/MemTotal/ {printf "%.2f GB", $2/1024/1024}' /proc/meminfo))"
 ram_usage=$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2}')
-echo "RAM Usage >> ($ram_usage)"
+echo "(RAM Usage) >> ($ram_usage)"
 echo "#################################################################"
 
-read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+read -rsn1 -p "(Press 'r or R' to reload or press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
@@ -196,12 +196,12 @@ clear
 echo "#################################################################"
 lsblk
 echo "#################################################################"
-echo "Total Disk Size >> ($(df -h | awk '/\/$/ {print $2}'))"
-echo "Used Disk Space >> ($(df -h | awk '/\/$/ {print $3}'))"
-echo "Free Disk Space >> ($(df -h | awk '/\/$/ {print $4}'))"
+echo "(Total Disk Size) >> ($(df -h | awk '/\/$/ {print $2}'))"
+echo "(Used Disk Space) >> ($(df -h | awk '/\/$/ {print $3}'))"
+echo "(Free Disk Space) >> ($(df -h | awk '/\/$/ {print $4}'))"
 echo "#################################################################"
 
-read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+read -rsn1 -p "(Press 'r or R' to reload or press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
@@ -220,7 +220,7 @@ echo "#################################################################"
 lspci | grep -i "pci bridge" | awk -F" " '{print $1, $2, $3, $4}'
 echo "#################################################################"
 
-read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+read -rsn1 -p "(Press 'r or R' to reload or press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
@@ -239,7 +239,7 @@ echo "#################################################################"
 lsusb
 echo "#################################################################"
 
-read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+read -rsn1 -p "(Press 'r or R' to reload or press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
@@ -256,16 +256,16 @@ while true; do
 clear
 echo "#################################################################"
 gpu_name=$(lspci -v | grep -i vga | cut -d ":" -f 3)
-echo "GPU Name >> ($gpu_name)"
+echo "(GPU Name) >> ($gpu_name)"
 echo "#################################################################"
-echo "Video Driver >> ($(lspci -k | awk '/VGA compatible controller/ {getline; print}' | awk '{print $3}'))"
+echo "(Video Driver) >> ($(lspci -k | awk '/VGA compatible controller/ {getline; print}' | awk '{print $3}'))"
 gpu_temp=$(sensors | grep "temp1:" | awk '{ print $2; exit }')
-echo "GPU Temperature >> ($gpu_temp)"
+echo "(GPU Temperature) >> ($gpu_temp)"
 glxinfo | grep -i "Video Memory"
 glxinfo | grep "OpenGL version string"
 echo "#################################################################"
 
-read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+read -rsn1 -p "(Press 'r or R' to reload or press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
@@ -284,21 +284,21 @@ echo "#################################################################"
 device="/dev/sda"  
 rpm=$(sudo hdparm -I "$device" | grep Rotation | awk '{print $NF}')
 if [[ -n "$rpm" ]]; then
-echo "Hard drive RPM ($device) >> ($rpm)"
+echo "(Hard drive RPM) ($device) >> ($rpm)"
 else
-echo "Unable to retrieve the RPM of the hard drive ($device)"
+echo "(Unable to retrieve the RPM of the hard drive) ($device)"
 fi
 echo "#################################################################"
 device="/dev/vda"  
 rpm=$(sudo hdparm -I "$device" | grep Rotation | awk '{print $NF}')
 if [[ -n "$rpm" ]]; then
-echo "Hard drive RPM ($device) >> ($rpm)"
+echo "(Hard drive RPM) ($device) >> ($rpm)"
 else
-echo "Unable to retrieve the RPM of the hard drive ($device)"
+echo "(Unable to retrieve the RPM of the hard drive) ($device)"
 fi
 echo "#################################################################"
 
-read -rsn1 -p "Press 'r or R' to reload or press Enter to return to the main menu
+read -rsn1 -p "(Press 'r or R' to reload or press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
