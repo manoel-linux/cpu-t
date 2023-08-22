@@ -128,7 +128,7 @@ echo " ██████   ██████  ██   ████ ███�
 echo "#################################################################"
 echo "(Installation/Update completed)"
 echo "#################################################################"
-echo "To use CPU-T, execute the following command: cpu-t"
+echo "(To use CPU-T, execute the following command >> cpu-t)"
 echo "#################################################################"
 read -rsn1 -p "(press Enter to return to the main menu)
 #################################################################" key
@@ -191,7 +191,7 @@ echo " ██████   ██████  ██   ████ ███�
 echo "#################################################################"
 echo "(Installation/Update completed)"
 echo "#################################################################"
-echo "To use CPU-T, execute the following command: cpu-t"
+echo "(To use CPU-T, execute the following command >> cpu-t)"
 echo "#################################################################"
 read -rsn1 -p "(press Enter to return to the main menu)
 #################################################################" key
@@ -254,14 +254,13 @@ echo " ██████   ██████  ██   ████ ███�
 echo "#################################################################"
 echo "(Installation/Update completed)"
 echo "#################################################################"
-echo "To use CPU-T, execute the following command: cpu-t"
+echo "(To use CPU-T, execute the following command >> cpu-t)"
 echo "#################################################################"
 read -rsn1 -p "(press Enter to return to the main menu)
 #################################################################" key
 if [[ $key == "r" || $key == "R" ]]; then
 continue
 fi
-
 break
 done
 
@@ -317,7 +316,7 @@ echo " ██████   ██████  ██   ████ ███�
 echo "#################################################################"
 echo "(Installation/Update completed)"
 echo "#################################################################"
-echo "To use CPU-T, execute the following command: cpu-t"
+echo "(To use CPU-T, execute the following command >> cpu-t)"
 echo "#################################################################"
 read -rsn1 -p "(press Enter to return to the main menu)
 #################################################################" key
