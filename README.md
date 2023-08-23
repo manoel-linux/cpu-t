@@ -40,7 +40,7 @@
 
 # Other Projects
 
-- DEB2XBPS: A tool I developed based on the code of xdeb, specifically designed for Void Linux. DEB2XBPS enables the conversion of .deb packages to the .xbps   format used in Void Linux, simplifying package management in this distribution. You can find the source code and additional information about DEB2XBPS in the  following repository: https://github.com/manoel-linux/deb2xbps-shlibs-voidpackages. It is based on the xdeb.
+- DEB2XBPS: A tool I developed based on the code of xdeb, specifically designed for Void Linux. DEB2XBPS enables the conversion of .deb packages to the .xbps   format used in Void Linux, simplifying package management in this distribution. You can find the source code and additional information about DEB2XBPS in the  following repository: https://github.com/manoel-linux/deb2xbps-shlibs-voidpackages It is based on the xdeb.
 
 - way-display-guard is a tool that can resolve a display:0 issue when attempting to run a program as a superuser or using "sudo." Remember to execute the way-display-guard every time you shut down or restart your PC. You can find the source code and more information about way-display-guard in the following repository: https://github.com/manoel-linux/way-display-guard
 
@@ -53,6 +53,8 @@
 - The install-uefi-in-qemu script is a tool for installing QEMU UEFI when the UEFI BIOS is not included or available in the distribution's repository. You can find the source code and more information about install-uefi-in-qemu in the following repository: https://github.com/manoel-linux/install-uefi-in-qemu
 
 - The ZRAM-SYSTEMD script streamlines Zram activation and configuration on Linux systems with systemd. It's particularly useful when distributions lack a modern tool for managing Zram effectively. This script provides a straightforward solution for users looking to utilize Zram's benefits. You can find the source code and more information about zram-systemd in the following repository: https://github.com/manoel-linux/zram-systemd
+
+- The force-opengl-version is a script that allows forcing a version of OpenGL that the GPU does not support, keeping in mind that some programs/.jar files may work without any issues in certain cases, while others may encounter problems. You can find the source code and more information about force-opengl-version in the following repository: https://github.com/manoel-linux/force-opengl-version
 
 # Project Status
 
