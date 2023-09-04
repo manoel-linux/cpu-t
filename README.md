@@ -56,6 +56,8 @@
 
 - The force-opengl-version is a script that allows forcing a version of OpenGL that the GPU does not support, keeping in mind that some programs/.jar files may work without any issues in certain cases, while others may encounter problems. You can find the source code and more information about force-opengl-version in the following repository: https://github.com/manoel-linux/force-opengl-version
 
+- The opti-systemd is a script for optimizing the systemd boot process on your Linux system. If you're looking for ways to enhance your system's performance, reduce boot times, and improve overall efficiency. You can find the source code and more information about opti-systemd in the following repository: https://github.com/manoel-linux/opti-systemd
+
 # Project Status
 
 - The CPU-T project is currently in development. The latest stable version is 0.2.5. We aim to provide regular updates and add more features in the future.
